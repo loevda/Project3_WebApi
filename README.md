@@ -1,6 +1,6 @@
 # Project3_WebApi
 
-This is Project 3, RESTful Web API with Node.js Framework.
+This is Project 3, RESTful Web API with Express Node.js Web Framework.
 
 ## Setup project for Review.
 
