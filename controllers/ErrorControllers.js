@@ -8,14 +8,22 @@ class ErrorController {
     constructor(app) {
         this.app = app;
         this.notFound();
+        this.catchErrors();
     }
 
     notFound () {
         this.app.use((req, res) => {
-            res.json({"error": "Not Found"});
-        })
+            const err = new Error('Not Found');
+            err.status = 404;
+            res.json(JSON.stringify(err.toString()));
+        });
     }
 
+    catchErrors () {
+        this.app.use((error, req, res, next) => {
+            res.json({"Error": error.message});
+        });
+    }
 
 }
 
