@@ -15,6 +15,7 @@ class APIServer {
         this.app = express();
         this.initExpress();
         this.initExpressMiddleWare();
+        this.getInfo();
         this.initControllers();
         this.start();
     }
@@ -32,6 +33,32 @@ class APIServer {
     initExpressMiddleWare() {
         this.app.use(bodyParser.urlencoded({extended:true}));
         this.app.use(bodyParser.json());
+    }
+
+    /**
+     * Default route
+     */
+    getInfo() {
+        this.app.get("/", (req, res) => {
+            res.json({
+                endpoints: [
+                    {
+                        "/block/{index}": {
+                            method: "GET",
+                            param: "{number} index",
+                            description: "Return the block with height of {number} index"
+                        }
+                    },
+                    {
+                        "/block": {
+                            method: "POST",
+                            description: "Add a new block to the blockchain .",
+                            payload: "Takes either an url-encoded key/value pair (body=value) or a json object {'body': 'value'}."
+                        }
+                    }
+                ]
+            })
+        });
     }
 
     /**

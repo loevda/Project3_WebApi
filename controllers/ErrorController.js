@@ -13,14 +13,14 @@ class ErrorController {
 
     notFound () {
         this.app.use((req, res) => {
-            const error = new Error('Not Found');
+            const error = new Error('404: Resource Not Found');
             error.status = 404;
             res.json({"error": error.message});
         });
     }
 
     catchErrors () {
-        this.app.use((error, req, res, next) => {
+        this.app.use((error, req, res) => {
             res.json({"error": error.message});
         });
     }
