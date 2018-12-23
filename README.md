@@ -11,9 +11,9 @@ To setup the project for review do the following:
 
 ##Endpoints
 
-| endpoint       | method | description                               |   |   |
-|----------------|--------|-------------------------------------------|---|---|
-| /              | GET    | List of available endpoints               |   |   |
-| /block/{index} | GET    | Return block at height of {number} index. |   |   |
-| /block         | POST   | Add a new block to the blockchain. Payload takes either an url-encoded key/value pair (body=value) or a json object {'body': 'value'}.       |   |   |     
+| endpoint       | method | description                               | 
+|----------------|--------|-------------------------------------------|
+| /              | GET    | List of available endpoints               |
+| /block/{index} | GET    | Return block at height of {number} index. |
+| /block         | POST   | Add a new block to the blockchain. Payload takes either an url-encoded key/value pair (body=value) or a json object {'body': 'value'}.       |     
 
