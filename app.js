@@ -39,6 +39,7 @@ class APIServer {
      */
     initControllers() {
         require("./controllers/BlockChainController.js")(this.app);
+        require("./controllers/ErrorControllers.js")(this.app);
     }
 
     /**
