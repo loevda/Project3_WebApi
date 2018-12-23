@@ -9,7 +9,7 @@ To setup the project for review do the following:
 2. Run command __npm install__ to install the project dependencies.
 3. Run __npm start__ to run the server. Server is listening at **http://localhost:8000**.
 
-##Endpoints
+## Endpoints
 
 | endpoint       | method | description                               | 
 |----------------|--------|-------------------------------------------|
