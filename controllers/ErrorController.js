@@ -21,7 +21,7 @@ class ErrorController {
 
     catchErrors () {
         this.app.use((error, req, res) => {
-            res.json({"error": error.message});
+            res.status(error.status || 500).json({"error": error.message});
         });
     }
 
