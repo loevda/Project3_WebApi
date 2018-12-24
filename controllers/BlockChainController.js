@@ -15,9 +15,9 @@ class BlockChainController {
     }
 
     getBlock() {
-        this.app.get("/block/:index", async (req, res) => {
+        this.app.get("/block/:blockheight", async (req, res) => {
             try {
-                let block = await this.chain.getBlock(req.params.index);
+                let block = await this.chain.getBlock(req.params.blockheight);
                 res.json(block);
             } catch(err) {
                 res.json({"error": err.toString()});

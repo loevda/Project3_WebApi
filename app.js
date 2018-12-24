@@ -43,10 +43,10 @@ class APIServer {
             res.json({
                 endpoints: [
                     {
-                        "/block/{index}": {
+                        "/block/[blockheight]": {
                             method: "GET",
-                            param: "{number} index",
-                            description: "Return the block with height of {number} index"
+                            param: "{number} blockheight",
+                            description: "Return the block with height of {number} blockheight"
                         }
                     },
                     {
